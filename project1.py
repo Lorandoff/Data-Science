@@ -3,7 +3,7 @@
 
 # In[6]:
 
-!pip install plotly
+import plolty
 import streamlit as st
 import plotly.express as px
 import pandas as pd
