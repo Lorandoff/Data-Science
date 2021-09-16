@@ -3,6 +3,7 @@
 
 # In[6]:
 
+py -m pip install --upgrade pip
 py -m pip install -r requirements.txt
 import plotly
 import streamlit as st
