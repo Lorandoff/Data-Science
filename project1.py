@@ -80,42 +80,45 @@ names = st.sidebar.multiselect("Город выбери", data_group["name"].uni
 
 year = st.sidebar.multiselect("Год выбери", data_group["year"].unique())
 
-new_df = data_group[(data_group["name"].isin(names)) & (data_group["year"].isin(year))]
-#st.write(new_df)
-show_df = st.sidebar.checkbox("Показать таблицу")
-if show_df == True:
-    st.subheader("Таблица")
-    st.markdown("Дефицит / Профицит бюджета для каждого квартала")
-    st.write(new_df)
+listing = st.sidebar.selectbox("Выберите страницу", ["Графики", "Предсказания"])
+
+if listing == "Графики":
+  new_df = data_group[(data_group["name"].isin(names)) & (data_group["year"].isin(year))]
+  #st.write(new_df)
+  show_df = st.sidebar.checkbox("Показать таблицу")
+  if show_df == True:
+      st.subheader("Таблица")
+      st.markdown("Дефицит / Профицит бюджета для каждого квартала")
+      st.write(new_df)
     
     
-fig = px.line(new_df, x = "year", y = "money", color = "name")
-st.markdown("Общая доля доходов за все года") 
-fig1 = px.pie(data_sum_to_year , values = "money", color = "year")
-fig2 = px.bar(new_df, x = "year", y = "money", color = "name")
-fig3,ax = plt.subplots()
+  fig = px.line(new_df, x = "year", y = "money", color = "name")
+  st.markdown("Общая доля доходов за все года") 
+  fig1 = px.pie(data_sum_to_year , values = "money", color = "year")
+  fig2 = px.bar(new_df, x = "year", y = "money", color = "name")
+  fig3,ax = plt.subplots()
+
+  show_fig2 = st.sidebar.checkbox("Показать график баров")
+  show_fig1 = st.sidebar.checkbox("Показать диаграмму долей за все года")
+  if show_fig2 == True:
+      st.subheader("График")
+      st.plotly_chart(fig2)
+  if show_fig1 == True:
+      st.subheader("Диаграмма долей")
+      st.plotly_chart(fig1)
+  st.plotly_chart(fig)
+  st.pyplot(fig3)
 
 
-name = st.selectbox("Город выбирай", data_group["name"].unique())
-new_data = data_group[data_group["name"].isin([name])]
-number = st.number_input("Введите значение")
-norm = sts.norm(new_data["money"].mean(),np.var(new_data["money"]))
-result = norm.cdf(number)
-st.write(result)
-ax.hist(new_data["money"], density = True, bins = 50)
+if listing == "Предсказания":
+  name = st.selectbox("Город выбирай", data_group["name"].unique())
+  new_data = data_group[data_group["name"].isin([name])]
+  number = st.number_input("Введите значение")
+  norm = sts.norm(new_data["money"].mean(),np.std(new_data["money"]))
+  result = norm.cdf(number)
+  st.write(result)
+  ax.hist(new_data["money"], density = True, bins = 50)
 
-
-
-show_fig2 = st.sidebar.checkbox("Показать график баров")
-show_fig1 = st.sidebar.checkbox("Показать диаграмму долей за все года")
-if show_fig2 == True:
-    st.subheader("График")
-    st.plotly_chart(fig2)
-if show_fig1 == True:
-    st.subheader("Диаграмма долей")
-    st.plotly_chart(fig1)
-st.plotly_chart(fig)
-st.pyplot(fig3)
 # In[ ]:
 
 
