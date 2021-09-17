@@ -3,5 +3,5 @@ plotly.express
 pandas
 seaborn
 matplotlib
-scipy.stats
+scipy
 numpy
