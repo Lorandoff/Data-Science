@@ -113,7 +113,7 @@ if listing == "Предсказания":
   new_data = data_group[data_group["name"].isin([name])]
   number = st.number_input("Введите значение")
   norm = sts.norm(new_data["money"].mean(),np.std(new_data["money"]))
-  result = norm.cdf(number)
+  result = norm.cdf(1 - number)
   st.write(result)
   ax.hist(new_data["money"], density = True, bins = 50)
   st.pyplot(fig3)
