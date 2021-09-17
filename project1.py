@@ -76,13 +76,11 @@ for i in range(len(dictinary)):
 data_group = data.groupby(["name","year"], as_index = False).mean()
 data_sum_to_year = data.groupby("year", as_index = False).sum()
 
-names = st.sidebar.multiselect("Город выбери", data_group["name"].unique())
-
-year = st.sidebar.multiselect("Год выбери", data_group["year"].unique())
-
 listing = st.sidebar.selectbox("Выберите страницу", ["Графики", "Предсказания"])
 
 if listing == "Графики":
+  names = st.sidebar.multiselect("Город выбери", data_group["name"].unique())
+  year = st.sidebar.multiselect("Год выбери", data_group["year"].unique())
   new_df = data_group[(data_group["name"].isin(names)) & (data_group["year"].isin(year))]
   #st.write(new_df)
   show_df = st.sidebar.checkbox("Показать таблицу")
@@ -96,7 +94,6 @@ if listing == "Графики":
   st.markdown("Общая доля доходов за все года") 
   fig1 = px.pie(data_sum_to_year , values = "money", color = "year")
   fig2 = px.bar(new_df, x = "year", y = "money", color = "name")
-  fig3,ax = plt.subplots()
 
   show_fig2 = st.sidebar.checkbox("Показать график баров")
   show_fig1 = st.sidebar.checkbox("Показать диаграмму долей за все года")
@@ -107,10 +104,11 @@ if listing == "Графики":
       st.subheader("Диаграмма долей")
       st.plotly_chart(fig1)
   st.plotly_chart(fig)
-  st.pyplot(fig3)
+  #st.pyplot(fig3)
 
 
 if listing == "Предсказания":
+  fig3,ax = plt.subplots()
   name = st.selectbox("Город выбирай", data_group["name"].unique())
   new_data = data_group[data_group["name"].isin([name])]
   number = st.number_input("Введите значение")
@@ -118,6 +116,7 @@ if listing == "Предсказания":
   result = norm.cdf(number)
   st.write(result)
   ax.hist(new_data["money"], density = True, bins = 50)
+  st.pyplot(fig3)
 
 # In[ ]:
 
