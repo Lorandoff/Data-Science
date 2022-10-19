@@ -1,3 +1,1 @@
-Привет! На этой странице ты можешь посмотреть на мой путь в DS(репозиторий постоянно обновляется). У меня есть несколько бранчей, каждый назван соответственно сложности, где 1 - минимальная(то есть начало моего путь в DS).
-
-Во время чтения книги Франсуа Шолле "Глубокое обучение на Python", меня восхитили возможности нейронных сетей создавать и творить, поэтому, здесь я решил сделать генеративно-состязательную модель для генерации музыки(в проекте используется структура MusGAN), получилось конечно не так хорошо, как у ребят из OpenAI, но тоже неплохо.
+While reading Francois Scholle's book "Deep Learning in Python", I was fascinated by the possibilities of neural networks to create and create, so here I decided to make a generative-competitive model for generating music (the project uses the MusGAN structure), it turned out of course not as good as the guys from OpenAI, but also not bad.
