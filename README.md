@@ -1,1 +1,1 @@
-Первый проект по машинному обучению. Здесь есть деревья решений, случайный лес и логистическая регрессия.
+The first machine learning project. There are decision trees, random forest, and logistic regression.
