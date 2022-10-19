@@ -1,1 +1,1 @@
-Привет! На этой странице ты можешь посмотреть на мой путь в DS(репозиторий постоянно обновляется). У меня есть несколько бранчей, каждый назван соответственно сложности, где 1 - минимальная(то есть начало моего путь в DS).
+Hi! On this page you can look at my path to DS (the repository is constantly updated). I have several brunches, each named according to the difficulty, where 1 is the minimum (that is, the beginning of my path to DS).
