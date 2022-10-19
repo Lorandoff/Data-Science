@@ -1,5 +1,3 @@
-Привет! На этой странице ты можешь посмотреть на мой путь в DS(репозиторий постоянно обновляется). У меня есть несколько бранчей, каждый назван соответственно сложности, где 1 - минимальная(то есть начало моего путь в DS).
+This is my first interesting project in DS, although it would probably be more correct to say in Data Analysis. There are graphs, tables and statistics here)
 
-Это мой первый интересный проект в DS, хотя наверно будет корректнее сказать в Анализе данных. Тут есть графики, таблицы и статистика)
-
-Проект учебный, поэтому в начале ноутбука задачи выглядят и звучат как ТЗ. В Plotly все графики интерактивные, поэтому, чтобы увидеть полностью весь проект - запустите ноутбук у себя.
+The project is educational, so at the beginning of the notebook, the tasks look and sound like TK. In Plotly, all charts are interactive, so to see the whole project completely, start the laptop at home.
