@@ -1,3 +1,1 @@
-Привет! На этой странице ты можешь посмотреть на мой путь в DS(репозиторий постоянно обновляется). У меня есть несколько бранчей, каждый назван соответственно сложности, где 1 - минимальная(то есть начало моего путь в DS).
-
-Здесь я сделал анализ и немного предсказаний на основе теории вероятностей и математической статистики, используя открытые датасеты министерства финансов Челябинской области, и сделал для всего этого сайт с помощью библиотеки streamlit https://share.streamlit.io/lorandoff/project3/5/project1.py. 
+Here I made an analysis and some predictions based on probability theory and mathematical statistics using open datasets of the Ministry of Finance of the Chelyabinsk region, and made a website for all this using the streamline library https://share.streamlit.io/lorandoff/project3/5/project1.py. 
